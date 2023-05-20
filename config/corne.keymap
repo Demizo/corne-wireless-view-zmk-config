@@ -25,7 +25,7 @@
                         compatible = "zmk,behavior-hold-tap";
                         label = "HOMEROW_MODS";
                         #binding-cells = <2>;
-                        tapping-term-ms = <200>;
+                        tapping-term-ms = <250>;
                         quick_tap_ms = <0>;
                         flavor = "tap-preferred";
                         bindings = <&kp>, <&kp>;
@@ -66,7 +66,7 @@
    &kp PRCNT &kp KP_MULTIPLY &kp N7 &kp N8 &kp N9 &kp EQUAL   &kp LT    &kp LBRC &kp RBRC &kp GT   &kp HASH &kp DEL
    &sk LGUI   &kp FSLH       &kp N4 &kp N5 &kp N6 &kp PLUS    &kp CARET &kp LPAR &kp RPAR &kp EXCL &kp SEMI &kp BSPC
    &sk LCTRL &kp N0          &kp N1 &kp N2 &kp N3 &kp MINUS   &kp BSLH  &kp LBKT &kp RBKT &kp AT   &kp DLLR &kp AMPS
-                                &sk LSHFT &to 0 &kp ESC &mt LC(LS(LGUI)) SPACE   &mt LC(LGUI) RET &to 2 &kp BSPC
+                             &sk LSHFT &to 0 &mt LC(LS(LGUI)) SPACE   &mt LC(LGUI) RET &to 2 &kp BSPC
                         >;
                 };
                 
@@ -80,7 +80,7 @@
    &kp TAB   &kp F10 &kp F7 &kp F8 &kp F9 &kp GRAVE    &kp HOME &kp PG_UP &kp PG_DN &kp END   &kp PSCRN &kp DEL
    &sk LGUI   &kp F11 &kp F4 &kp F5 &kp F6 &none       &kp LEFT &kp UP    &kp DOWN  &kp RIGHT &none     &kp BSPC
    &sk LCTRL &kp F12 &kp F1 &kp F2 &kp F3 &none        &none    &none     &none     &none     &none     &to 3
-                         &sk LSHFT &to 0 &kp ESC &mt LC(LS(LGUI)) SPACE     &mt LC(LGUI) RET &none &kp BSPC
+                         &sk LSHFT &to 0 &mt LC(LS(LGUI)) SPACE     &mt LC(LGUI) RET &none &kp BSPC
                         >;
                 };
                 media_layer {
@@ -93,8 +93,10 @@
    &kp TAB   &bt BT_CLR &none    &kp C_PREV   &kp C_NEXT   &none        &mwh SCROLL_UP   &mwh SCROLL_LEFT &mmv MOVE_UP   &mwh SCROLL_RIGHT &kp PSCRN &kp DEL
    &sk LGUI  &none      &kp C_PP &kp C_VOL_DN &kp C_VOL_UP &none        &mwh SCROLL_DOWN &mmv MOVE_LEFT   &mmv MOVE_DOWN &mmv MOVE_RIGHT   &none     &kp BSPC
    &sk LCTRL &none      &none    &bt BT_PRV   &bt BT_NXT   &none        &none            &mkp LCLK        &mkp RCLK      &none             &none     &none
-                         &sk LSHFT &to 0 &kp ESC &mt LC(LS(LGUI)) SPACE     &mt LC(LGUI) RET &none &kp BSPC
+                         &sk LSHFT &to 0 &mt LC(LS(LGUI)) SPACE     &mt LC(LGUI) RET &none &kp BSPC
                         >;
                 };
         };
 };
+
+
