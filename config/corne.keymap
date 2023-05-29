@@ -45,50 +45,51 @@
 
                 default_layer {
 // -----------------------------------------------------------------------------------------
-// | TAB  |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L   |  U   |  Y  |  /  | DEL  |
-// | GUI  |  A  |  R  |  S  |  T  |  G  |   |  M  |  N   |  E   |  I  |  O  | BKSP |
-// | CTRL |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H   |  ,   |  .  |  ;  |  '   |
-//                    | SHF | ESC | SPC |   | ENT | L1   | BKSP |
+// | none |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L   |  U   |  Y  |  /  | DEL  |
+// | CAP  |  A  |  R  |  S  |  T  |  G  |   |  M  |  N   |  E   |  I  |  O  | REPT |
+// | none |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H   |  ,   |  .  |  ;  |  '   |
+//                    | TAB | ESC | SPC |   | ENT | L1   | BKSP |
                         bindings = <
-   &kp TAB   &kp Q      &kp W      &kp F       &kp P &kp B   &kp J &kp L  &kp U       &kp Y      &kp FSLH   &kp DEL
-   &sk LGUI  &hm LGUI A &hm LALT R &hm LCTRL S &kp T &kp G   &kp M &kp N  &hm LCTRL E &hm LALT I &hm LGUI O &kp BSPC
-   &sk LCTRL &kp Z      &kp X      &kp C       &kp D &kp V   &kp K &kp H  &kp COMMA   &kp DOT    &kp SEMI   &kp SQT
-               &sk LSHFT &mt LC(LS(LGUI)) SPACE &kp ESC    &to 1 &mt LC(LGUI) RET  &kp BSPC
+   &none      &kp Q      &kp W      &kp F       &kp P       &kp B   &kp J &kp L       &kp U       &kp Y      &kp FSLH   &kp DEL
+   &caps_word &hm LGUI A &hm LALT R &hm LCTRL S &hm LSHFT T &kp G   &kp M &hm LSHFT N &hm LCTRL E &hm LALT I &hm LGUI O &key_repeat
+   &none      &kp Z      &kp X      &kp C       &kp D       &kp V   &kp K &kp H       &kp COMMA   &kp DOT    &kp SEMI   &kp SQT
+               &mt LC(LA(LS(LGUI))) TAB &mt LC(LS(LGUI)) SPACE &kp ESC    &to 1 &mt LC(LGUI) RET  &kp BSPC
                         >;
                 };
                 number_layer {
+                        
 // -----------------------------------------------------------------------------------------
-// | %    |  *  |  7  |  8  |  9  |  =  |   |  <  |  {  |  }   |  >  |  #  | DEL  |
-// | GUI  |  /  |  4  |  5  |  6  |  +  |   |  ^  |  (  |  )   |  !  |  ;  | BKSP |
-// | CTRL |  0  |  1  |  2  |  3  |  -  |   |  \  |  [  |  ]   |  @  |  $  | &    |
-//                    | SHF | L0  | SPC |   | ENT | L2  | BKSP |
+// | `    |  *  |  7  |  8  |  9  |  =  |   |  <  |  {  |  }   |  >  |  #  | DEL  |
+// | CAP  |  /  |  4  |  5  |  6  |  +  |   |  ^  |  (  |  )   |  !  |  ;  | REPT |
+// | %    |  0  |  1  |  2  |  3  |  -  |   |  \  |  [  |  ]   |  @  |  $  | &    |
+//                    | TAB | L0  | SPC |   | ENT | L2  | BKSP |
                         bindings = <
-   &kp PRCNT &kp KP_MULTIPLY &kp N7 &kp N8 &kp N9 &kp EQUAL   &kp LT    &kp LBRC &kp RBRC &kp GT   &kp HASH &kp DEL
-   &sk LGUI   &kp FSLH       &kp N4 &kp N5 &kp N6 &kp PLUS    &kp CARET &kp LPAR &kp RPAR &kp EXCL &kp SEMI &kp BSPC
-   &sk LCTRL &kp N0          &kp N1 &kp N2 &kp N3 &kp MINUS   &kp BSLH  &kp LBKT &kp RBKT &kp AT   &kp DLLR &kp AMPS
-                             &sk LSHFT &mt LC(LS(LGUI)) SPACE &to 0    &to 2 &mt LC(LGUI) RET  &kp BSPC
+   &kp GRAVE  &kp KP_MULTIPLY &kp N7      &kp N8       &kp N9       &kp EQUAL   &kp LT    &kp LBRC       &kp RBRC       &kp GT        &kp HASH      &kp DEL
+   &caps_word &hm LGUI FSLH   &hm LALT N4 &hm LCTRL N5 &hm LSHFT N6 &kp PLUS    &kp CARET &hm LSHFT LPAR &hm LCTRL RPAR &hm LALT EXCL &hm LGUI SEMI &key_repeat
+   &kp PRCNT  &kp N0          &kp N1      &kp N2       &kp N3       &kp MINUS   &kp BSLH  &kp LBKT       &kp RBKT       &kp AT        &kp DLLR      &kp AMPS
+                       &mt LC(LA(LS(LGUI))) TAB &mt LC(LS(LGUI)) SPACE &to 0    &to 2 &mt LC(LGUI) RET  &kp BSPC
                         >;
                 };
                 
                 nav_layer {
 // -----------------------------------------------------------------------------------------
-// | TAB  | F10 | F7  | F8  | F9  |  `  |   | PGU | HOME | UP   | END | PRT | DEL  |
-// | GUI  | F11 | F3  | F4  | F5  |     |   | PGD | LFT  | DWN  | RHT |     | BKSP |
-// | CTRL | F12 | F1  | F2  | F3  |     |   |     |      |      |     |     | L3   |
-//                    | SHF | L0  | SPC |   | ENT |      | BKSP |
+// | none | F10 | F7  | F8  | F9  |  `  |   | PGU | HOME | UP   | END | PRT | DEL  |
+// | CAP  | F11 | F3  | F4  | F5  |     |   | PGD | LFT  | DWN  | RHT |     | REPT |
+// | none | F12 | F1  | F2  | F3  |     |   |     |      |      |     |     | L3   |
+//                    | TAB | L0  | SPC |   | ENT |      | BKSP |
                         bindings = <
-   &kp TAB   &kp F10 &kp F7 &kp F8 &kp F9 &kp GRAVE    &kp PG_UP &kp HOME  &kp UP   &kp END   &kp PSCRN &kp DEL
-   &sk LGUI  &kp F11 &kp F4 &kp F5 &kp F6 &none        &kp PG_DN &kp LEFT &kp DOWN &kp RIGHT &none     &kp BSPC
-   &sk LCTRL &kp F12 &kp F1 &kp F2 &kp F3 &none        &none     &none    &none    &none     &none     &to 3
-                         &sk LSHFT &mt LC(LS(LGUI)) SPACE &to 0      &none &mt LC(LGUI) RET  &kp BSPC
+   &none      &kp F10      &kp F7      &kp F8       &kp F9       &kp GRAVE    &kp PG_UP &kp HOME &kp UP   &kp END   &kp PSCRN &kp DEL
+   &caps_word &hm LGUI F11 &hm LALT F4 &hm LCTRL F5 &hm LSHFT F6 &none        &kp PG_DN &kp LEFT &kp DOWN &kp RIGHT &none     &key_repeat
+   &none      &kp F12      &kp F1      &kp F2       &kp F3       &none        &none     &none    &none    &none     &none     &to 3
+                         &mt LC(LA(LS(LGUI))) TAB &mt LC(LS(LGUI)) SPACE &to 0      &none &mt LC(LGUI) RET  &kp BSPC
                         >;
                 };
                 media_layer {
 // -----------------------------------------------------------------------------------------
-// | TAB  | BTC |     | PRV | NXT |     |   | SU  | LC | MU   | RC | PRT | DEL  |
-// | GUI  |     | PLY | V-  | V+  |     |   | SD  | ML | MD   | MR |     | BKSP |
-// | CTRL |     |     | BTP | BTN |     |   |     | SL |      | SR |     |      |
-//                    | SHF | L0  | SPC |   | ENT |    | BKSP |
+// | none | BTC |     | PRV | NXT |     |   | SU  | LC | MU   | RC | PRT | DEL  |
+// | CAP  |     | PLY | V-  | V+  |     |   | SD  | ML | MD   | MR |     | REPT |
+// | none |     |     | BTP | BTN |     |   |     | SL |      | SR |     |      |
+//                    | TAB | L0  | SPC |   | ENT |    | BKSP |
                         /*
                         bindings = <
    &kp TAB   &bt BT_CLR &none    &kp C_PREV   &kp C_NEXT   &none        &mwh SCROLL_UP   &mkp LCLK        &mmv MOVE_UP   &mkp RCLK         &kp PSCRN &kp DEL
@@ -98,10 +99,10 @@
                         >;
                         */
                         bindings = <
-   &kp TAB   &bt BT_CLR &none    &kp C_PREV   &kp C_NEXT   &none        &kp PG_UP &kp HOME  &kp UP   &kp END   &kp PSCRN &kp DEL
-   &sk LGUI  &none      &kp C_PP &kp C_VOL_DN &kp C_VOL_UP &none        &kp PG_DN &kp LEFT &kp DOWN &kp RIGHT &none     &kp BSPC
-   &sk LCTRL &none      &none    &bt BT_PRV   &bt BT_NXT   &none        &none     &none    &none    &none     &none     &none
-                         &sk LSHFT &mt LC(LS(LGUI)) SPACE &to 0         &none     &mt LC(LGUI) RET  &kp BSPC
+   &none      &bt BT_CLR &none         &kp C_PREV         &kp C_NEXT         &none        &kp PG_UP &kp HOME &kp UP   &kp END   &kp PSCRN &kp DEL
+   &caps_word &kp LGUI   &hm LALT C_PP &hm LCTRL C_VOL_DN &hm LSHFT C_VOL_UP &none        &kp PG_DN &kp LEFT &kp DOWN &kp RIGHT &none     &key_repeat
+   &none      &none      &none         &bt BT_PRV         &bt BT_NXT         &none        &none     &none    &none    &none     &none     &none
+                         &mt LC(LA(LS(LGUI))) TAB &mt LC(LS(LGUI)) SPACE &to 0         &none     &mt LC(LGUI) RET  &kp BSPC
                         >;
                 };
         };
