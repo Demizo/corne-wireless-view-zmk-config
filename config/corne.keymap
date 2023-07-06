@@ -30,6 +30,15 @@
                         flavor = "tap-preferred";
                         bindings = <&kp>, <&kp>;
                 };
+                lhk: layer_hold_key {
+                        compatible = "zmk,behavior-hold-tap";
+                        label = "LAYER_HOLD_KEY";
+                        #binding-cells = <2>;
+                        tapping-term-ms = <200>;
+                        quick_tap_ms = <0>;
+                        flavor = "tap-preferred";
+                        bindings = <&kp>, <&to>;
+                };
                 td: tapdance {
                         compatible = "zmk,behavior-hold-tap";
                         label = "TAPDANCE";
@@ -53,7 +62,7 @@
    &none      &kp Q      &kp W      &kp F       &kp P       &kp B   &kp J &kp L       &kp U       &kp Y      &kp FSLH   &kp DEL
    &caps_word &hm LGUI A &hm LALT R &hm LCTRL S &hm LSHFT T &kp G   &kp M &hm LSHFT N &hm LCTRL E &hm LALT I &hm LGUI O &key_repeat
    &kp UNDER  &kp Z      &kp X      &kp C       &kp D       &kp V   &kp K &kp H       &kp COMMA   &kp DOT    &kp SEMI   &kp SQT
-               &mt LC(LA(LS(LGUI))) TAB &mt LC(LS(LGUI)) SPACE &kp ESC    &to 1 &mt LC(LGUI) RET  &kp BSPC
+               &mt LC(LA(LS(LGUI))) TAB &mt LC(LS(LGUI)) SPACE &lhk ESC 0    &to 1 &mt LC(LGUI) RET  &kp BSPC
                         >;
                 };
                 number_layer {
