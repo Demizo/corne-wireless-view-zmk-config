@@ -147,7 +147,7 @@ static void draw_middle(lv_obj_t *widget, lv_color_t cbuf[], const struct status
     };
 
     for (int i = 0; i < 5; i++) {
-        bool selected = i == state->layer_index;
+        bool selected = i == state->active_profile_index;
 
         lv_canvas_draw_arc(canvas, circle_offsets[i][0], circle_offsets[i][1], 13, 0, 359,
                            &arc_dsc);
@@ -232,9 +232,10 @@ static void set_output_status(struct zmk_widget_status *widget,
     widget->state.active_profile_index = state->active_profile_index;
     widget->state.active_profile_connected = state->active_profile_connected;
     widget->state.active_profile_bonded = state->active_profile_bonded;
-
+    
     draw_top(widget->obj, widget->cbuf, &widget->state);
-    //draw_bottom(widget->obj, widget->cbuf2, &widget->state);
+    draw_middle(widget->obj, widget->cbuf2, &widget->state);
+    draw_botto(widget->obj, widget->cbuf2, &widget->state);
 }
 
 static void output_status_update_cb(struct output_status_state state) {
@@ -266,7 +267,7 @@ static void set_layer_status(struct zmk_widget_status *widget, struct layer_stat
     widget->state.layer_index = state.index;
     widget->state.layer_label = state.label;
 
-    draw_middle(widget->obj, widget->cbuf3, &widget->state);
+    //draw_middle(widget->obj, widget->cbuf3, &widget->state);
 }
 
 static void layer_status_update_cb(struct layer_status_state state) {
