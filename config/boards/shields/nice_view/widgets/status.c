@@ -158,7 +158,7 @@ static void draw_middle(lv_obj_t *widget, lv_color_t cbuf[], const struct status
         }
 
         char label[2];
-        snprintf(label, sizeof(label), "%d", i + 1);
+        snprintf(label, sizeof(label), "%d", i);
         lv_canvas_draw_text(canvas, circle_offsets[i][0] - 8, circle_offsets[i][1] - 10, 16,
                             (selected ? &label_dsc_black : &label_dsc), label);
     }
@@ -234,7 +234,7 @@ static void set_output_status(struct zmk_widget_status *widget,
     widget->state.active_profile_bonded = state->active_profile_bonded;
 
     draw_top(widget->obj, widget->cbuf, &widget->state);
-    draw_bottom(widget->obj, widget->cbuf2, &widget->state);
+    //draw_bottom(widget->obj, widget->cbuf2, &widget->state);
 }
 
 static void output_status_update_cb(struct output_status_state state) {
