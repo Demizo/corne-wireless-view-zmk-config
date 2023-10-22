@@ -235,7 +235,7 @@ static void set_output_status(struct zmk_widget_status *widget,
     
     draw_top(widget->obj, widget->cbuf, &widget->state);
     //draw_middle(widget->obj, widget->cbuf2, &widget->state);
-    //draw_bottom(widget->obj, widget->cbuf2, &widget->state);
+    draw_bottom(widget->obj, widget->cbuf3, &widget->state);
 }
 
 static void output_status_update_cb(struct output_status_state state) {
@@ -266,8 +266,8 @@ ZMK_SUBSCRIPTION(widget_output_status, zmk_ble_active_profile_changed);
 static void set_layer_status(struct zmk_widget_status *widget, struct layer_status_state state) {
     widget->state.layer_index = state.index;
     widget->state.layer_label = state.label;
-
-    draw_middle(widget->obj, widget->cbuf3, &widget->state);
+    
+    draw_middle(widget->obj, widget->cbuf2, &widget->state);
 }
 
 static void layer_status_update_cb(struct layer_status_state state) {
