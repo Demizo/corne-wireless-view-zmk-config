@@ -73,9 +73,9 @@
 // | %    |  0  |  1  |  2  |  3  |  -  |   |  \  |  [  |  ]   |  @  |  ;  | $    |
 //                    | TAB | L0  | SPC |   | ENT | L1  | BKSP |
                         bindings = <
-   &kp GRAVE  &kp KP_MULTIPLY &kp N7      &kp N8       &kp N9       &kp EQUAL   &kp LT    &kp LBRC       &kp RBRC       &kp GT        &kp HASH      &kp DEL
-   &caps_word &hm LGUI FSLH   &hm LALT N4 &hm LCTRL N5 &hm LSHFT N6 &kp PLUS    &kp CARET &hm LSHFT LPAR &hm LCTRL RPAR &hm LALT EXCL &hm LGUI AMPS &to 2
-   &kp DOT    &kp N0          &kp N1      &kp N2       &kp N3       &kp MINUS   &kp BSLH  &kp LBKT       &kp RBKT       &kp AT        &kp SEMI      &kp DLLR
+   &td GRAVE TILDE &kp KP_MULTIPLY &kp N7      &kp N8       &kp N9       &kp EQUAL   &kp LT        &kp LBRC       &kp RBRC       &kp GT        &td HASH QMARK &kp DEL
+   &caps_word      &hm LGUI FSLH   &hm LALT N4 &hm LCTRL N5 &hm LSHFT N6 &kp PLUS    &kp CARET     &hm LSHFT LPAR &hm LCTRL RPAR &hm LALT EXCL &hm LGUI AMPS  &to 2
+   &kp UNDER       &kp N0          &kp N1      &kp N2       &kp N3       &kp MINUS   &td BSLH PIPE &kp LBKT       &td RBKT COMMA &td AT DOT    &kp SEMI       &td DLLR PRCNT
                        &mt LC(LA(LS(LGUI))) TAB &mt LC(LS(LGUI)) SPACE &lhk ESC 0    &to 1 &mt LC(LGUI) RET  &kp BSPC
                         >;
                 };
